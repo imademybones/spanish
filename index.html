@@ -4,10 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Español</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#b2242a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Español">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="warning-banner" class="warning-banner" hidden></div>
+  <div id="update-banner" class="update-banner" hidden>
+    <span>Update available</span>
+    <button id="update-reload-btn">Reload</button>
+  </div>
+  <div id="ios-hint-banner" class="ios-hint-banner" hidden>
+    <span>Install this app: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</span>
+    <button id="ios-hint-dismiss" aria-label="Dismiss">✕</button>
+  </div>
   <header class="app-bar">
     <span class="app-title">Español</span>
     <button id="settings-btn" class="nav-btn" aria-label="Settings">⚙</button>

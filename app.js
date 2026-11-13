@@ -1,4 +1,5 @@
-const APP_VERSION = '0.3.0';
+// Keep in sync with CACHE_VERSION in sw.js — bump both on every release.
+const APP_VERSION = 'v1';
 const MS_PER_DAY = 86400000;
 
 function normalizeForSearch(str) {
@@ -750,7 +751,7 @@ function renderSettings(state) {
 
   container.appendChild(dataCard);
 
-  container.appendChild(el('p', { class: 'muted version-note', text: `Español v${APP_VERSION}` }));
+  container.appendChild(el('p', { class: 'muted version-note', text: `Español ${APP_VERSION}` }));
 
   return container;
 }
@@ -769,6 +770,62 @@ function setupTabs() {
   });
 }
 
+function showUpdateBanner(worker) {
+  const banner = document.getElementById('update-banner');
+  banner.hidden = false;
+  document.getElementById('update-reload-btn').onclick = () => {
+    worker.postMessage('SKIP_WAITING');
+  };
+}
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+
+  function trackInstalling(worker) {
+    worker.addEventListener('statechange', () => {
+      // navigator.serviceWorker.controller is only set once some worker has
+      // already taken control of this page — true for a real update, never
+      // true for the very first install (sw.js never calls clients.claim()).
+      if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+        showUpdateBanner(worker);
+      }
+    });
+  }
+
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    // An update may already be sitting there waiting from a previous session.
+    if (reg.waiting && navigator.serviceWorker.controller) showUpdateBanner(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+      if (reg.installing) trackInstalling(reg.installing);
+    });
+  }).catch(() => {});
+
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  });
+}
+
+function isIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+function isStandalone() {
+  return window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+}
+
+function setupIOSHint(state) {
+  if (!isIOS() || isStandalone() || state.settings.iosAddToHomeHintDismissed) return;
+  const banner = document.getElementById('ios-hint-banner');
+  banner.hidden = false;
+  document.getElementById('ios-hint-dismiss').addEventListener('click', () => {
+    Store.update(s => { s.settings.iosAddToHomeHintDismissed = true; });
+    banner.hidden = true;
+  });
+}
+
 async function init() {
   Store.onWarning(msg => {
     const banner = document.getElementById('warning-banner');
@@ -782,6 +839,8 @@ async function init() {
   document.body.dataset.tab = 'today';
   setupTabs();
   renderApp();
+  setupIOSHint(Store.get());
+  registerServiceWorker();
 }
 
 init();

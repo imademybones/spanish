@@ -12,7 +12,8 @@ function defaultState() {
       startWeek: 1,
       startPhaseId: 'phase-1',
       scheduleShiftDays: 0,
-      theme: 'system'
+      theme: 'system',
+      iosAddToHomeHintDismissed: false
     },
     weeks: {},            // weekNumber -> { slots: { slotId: count }, familyTaskDone: bool, note: string }
     exitChecks: {},        // phaseId -> dateString completed

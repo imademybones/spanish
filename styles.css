@@ -61,6 +61,37 @@ h1 {
   font-size: 0.9rem;
 }
 
+.update-banner,
+.ios-hint-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.update-banner button,
+.ios-hint-banner button {
+  background: none;
+  border: 1px solid var(--accent-fg);
+  color: var(--accent-fg);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  min-height: 36px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ios-hint-banner button {
+  border: none;
+  font-size: 1.1rem;
+  padding: 0 4px;
+}
+
 .app-bar {
   display: flex;
   align-items: center;
