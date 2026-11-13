@@ -1,0 +1,264 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --card-bg: #f4f4f4;
+  --accent: #b2242a;
+  --accent-fg: #ffffff;
+  --border: #dddddd;
+  --tab-bg: #f8f8f8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --fg: #f0f0f0;
+    --muted: #a0a0a0;
+    --card-bg: #1e1e1e;
+    --accent: #e0555a;
+    --accent-fg: #121212;
+    --border: #333333;
+    --tab-bg: #1a1a1a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#screen {
+  flex: 1;
+  padding: 16px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+
+.warning-banner {
+  background: #fff3cd;
+  color: #664d03;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.week-header {
+  margin-bottom: 16px;
+}
+
+.week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.week-title {
+  text-align: center;
+  flex: 1;
+}
+
+.phase-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-btn {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: var(--fg);
+  min-width: 48px;
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 8px 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: block;
+  min-height: 44px;
+  text-align: left;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card p {
+  margin: 0 0 10px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.family-task {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.slot-row:last-child {
+  border-bottom: none;
+}
+
+.slot-label {
+  font-weight: 600;
+}
+
+.slot-progress {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.slot-tap {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.placeholder {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 16px;
+}
+
+.phase-block {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+}
+
+.phase-block summary {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 0;
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.phase-goal {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.habits {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.habits li {
+  margin-bottom: 6px;
+}
+
+.week-block {
+  border-top: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.week-block-range {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.week-block p {
+  margin: 4px 0;
+}
+
+.exit-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.exit-check input {
+  min-width: 24px;
+  min-height: 24px;
+  margin-top: 2px;
+}
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: var(--tab-bg);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-bar button {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 12px 4px;
+  min-height: 56px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.tab-bar button.active {
+  color: var(--accent);
+  font-weight: 600;
+}

@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "placementGuide": [
+    { "ability": "Greet people and order food, not much more", "startPhase": 1, "startWeek": 1 },
+    { "ability": "Chat in the present tense but stall on anything in the past", "startPhase": 1, "startWeek": 5 },
+    { "ability": "Tell a simple story in the past (with errors) and follow slow Spanish", "startPhase": 2, "startWeek": 9 },
+    { "ability": "Hold your own with a teacher but get lost at the family table", "startPhase": 3, "startWeek": 21 }
+  ],
+  "phases": [
+    {
+      "id": "phase-1",
+      "title": "Foundations",
+      "weekStart": 1,
+      "weekEnd": 8,
+      "goal": "By week 8 you can manage a five-minute conversation about yourself, your family and last weekend without falling back on English.",
+      "habits": [
+        "Main course for this phase: one audio-first beginner course, worked through in order.",
+        "Start the tutor in week 1, not week 8; early sessions can be mostly scripted."
+      ],
+      "exitCheck": "Five minutes with your tutor on yourself, your family and last weekend, no English.",
+      "blocks": [
+        {
+          "weekStart": 1,
+          "weekEnd": 2,
+          "grammar": "Sounds and spelling; ser vs estar; gender and articles; regular present tense",
+          "vocabulary": "Greetings, family members, numbers",
+          "familyTask": "Greet and say goodbye in Spanish every single time; ask ¿Cómo están? and understand the answer"
+        },
+        {
+          "weekStart": 3,
+          "weekEnd": 4,
+          "grammar": "Irregular present (tener, ir, querer, poder, hacer); gustar; question words",
+          "vocabulary": "Food and drink, the house, days and times",
+          "familyTask": "Ask what they are cooking, offer a drink, say what you like"
+        },
+        {
+          "weekStart": 5,
+          "weekEnd": 6,
+          "grammar": "Preterite: regular verbs plus fui, hice, tuve, estuve; ir a + infinitive for the future",
+          "vocabulary": "Work, weekend activities, places",
+          "familyTask": "Tell them one thing you did this week and one thing you will do next week"
+        },
+        {
+          "weekStart": 7,
+          "weekEnd": 8,
+          "grammar": "Imperfect basics; object pronouns (lo, la, le); reflexive verbs",
+          "vocabulary": "Childhood, describing people, daily routine",
+          "familyTask": "Ask one question about their life in Chile and follow up once"
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "title": "Conversation core",
+      "weekStart": 9,
+      "weekEnd": 20,
+      "goal": "By week 20 you can hold a 20-minute conversation and tell a three-minute story in the past.",
+      "habits": [
+        "Weekly diary: 150 words on your week, corrected by your tutor.",
+        "Shadowing: 5 minutes a day repeating a native speaker's audio out loud, half a second behind them.",
+        "One Chilean episode a week: a slow Chilean podcast for learners, so the accent is familiar before Phase 3."
+      ],
+      "exitCheck": "20 minutes of conversation with your tutor; a three-minute past-tense story; a slow learner podcast understood without a transcript.",
+      "blocks": [
+        {
+          "weekStart": 9,
+          "weekEnd": 11,
+          "grammar": "Preterite vs imperfect in storytelling; connectors (entonces, pero, porque, aunque, o sea)",
+          "conversationFocus": "Anecdotes: how you met your wife, a trip, a bad day",
+          "familyTask": "Tell one prepared two-minute story; ask them for one back"
+        },
+        {
+          "weekStart": 12,
+          "weekEnd": 14,
+          "grammar": "Present perfect; commands (páseme, siéntese, pruebe); comparisons",
+          "conversationFocus": "Kitchen and table talk",
+          "familyTask": "Cook one dish together with instructions in Spanish only"
+        },
+        {
+          "weekStart": 15,
+          "weekEnd": 17,
+          "grammar": "Present subjunctive after quiero que, espero que, ojalá, cuando",
+          "conversationFocus": "Opinions, hopes, plans for the family",
+          "familyTask": "Go through an old photo album; they narrate, you ask questions"
+        },
+        {
+          "weekStart": 18,
+          "weekEnd": 20,
+          "grammar": "Conditional and future; por vs para; impersonal se",
+          "conversationFocus": "Hypotheticals, travel, what Chile is like",
+          "familyTask": "Swap two voice notes a week on WhatsApp"
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "title": "The Chilean ear",
+      "weekStart": 21,
+      "weekEnd": 32,
+      "goal": "By week 32 you can follow the thread of a dinner-table conversation between Chileans and rejoin it after losing your place.",
+      "habits": [
+        "Move your daily listening to Chilean sources: start with podcasts made for learners, step up to 31 Minutos, then to native podcasts, radio and TV news.",
+        "Transcribe one minute of Chilean audio. Write what you hear, then check it with your tutor; the gaps show exactly which sounds you are missing.",
+        "Drill one sound change from the cheat sheet until you can both hear it and produce it.",
+        "Collect 10 chilenismos, taking them from your in-laws first and from podcasts second.",
+        "Ask your tutor for natural speed in the last 10 minutes of every session."
+      ],
+      "grammarNote": "Grammar still to cover, one topic per fortnight: imperfect subjunctive, si clauses (si tuviera…, iría), reported speech, relative clauses, and recognising the Chilean voseo forms.",
+      "exitCheck": "Summarise a 10-minute native Chilean podcast segment to your tutor; get through the Spanish-only meal.",
+      "blocks": [
+        {
+          "weekStart": 21,
+          "weekEnd": 24,
+          "familyTask": "Ask them to teach you one Chilean word or saying per visit, with an example"
+        },
+        {
+          "weekStart": 25,
+          "weekEnd": 28,
+          "familyTask": "Watch a Chilean programme or match together and talk about it afterwards"
+        },
+        {
+          "weekStart": 29,
+          "weekEnd": 32,
+          "familyTask": "First Spanish-only meal; agree beforehand that nobody rescues you in English"
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "title": "Family fluency",
+      "weekStart": 33,
+      "weekEnd": 52,
+      "goal": "By week 52 you can spend an hour in Spanish with your in-laws on almost any everyday topic, including humour and disagreement.",
+      "habits": [
+        "Structured study shrinks to one session a week, driven by the error log your tutor keeps.",
+        "Spanish-only meals: fortnightly from week 33, weekly from week 41.",
+        "Family history interviews: one 20-minute conversation a month about their lives in Chile; record it with their permission and re-listen for words you missed.",
+        "Phone and voice notes: audio with no faces or gestures is the hardest test, so make it routine.",
+        "Reading: short Chilean news articles weekly; later a short contemporary Chilean novel or story collection, a few pages a day.",
+        "Topics to stretch into: Chilean food and regions, football, politics and history (listen more than you talk), family jokes and sayings."
+      ],
+      "exitCheck": "An hour of unscripted conversation with your in-laws in which nobody switches to English.",
+      "capstone": {
+        "label": "Give a two-minute toast in Spanish at a family occasion.",
+        "note": "Fiestas Patrias on 18 September 2027 lands at about week 44 and suits it well.",
+        "targetWeek": 44
+      },
+      "blocks": []
+    }
+  ],
+  "weeklySlots": [
+    {
+      "id": "vocab",
+      "label": "Vocabulary review",
+      "targetPerWeek": 7,
+      "minutes": 10,
+      "purpose": "Spaced-repetition flashcards; about 10 new cards a day, drawn from that week's theme and from words your in-laws actually use"
+    },
+    {
+      "id": "listening",
+      "label": "Listening",
+      "targetPerWeek": 7,
+      "minutes": 20,
+      "purpose": "Audio at your level – commute, dog walk, dishes"
+    },
+    {
+      "id": "study",
+      "label": "Structured study",
+      "targetPerWeek": 2,
+      "minutes": 30,
+      "purpose": "The grammar point of the week, then 5 sentences of your own using it"
+    },
+    {
+      "id": "tutor",
+      "label": "Tutor conversation",
+      "targetPerWeek": 1,
+      "minutes": 45,
+      "purpose": "A Chilean tutor; half free conversation, half correction of your mistakes"
+    },
+    {
+      "id": "family",
+      "label": "Family task",
+      "targetPerWeek": 1,
+      "minutes": "15–30",
+      "purpose": "The task listed for that week, done with your in-laws in person or by voice note"
+    }
+  ],
+  "cheatSheet": {
+    "sounds": [
+      {
+        "pattern": "s at the end of a syllable turns into a breath or vanishes",
+        "textbook": "los amigos; más o menos",
+        "chilean": "loh amigoh; ma o meno"
+      },
+      {
+        "pattern": "-ado loses its d",
+        "textbook": "cansado; pescado",
+        "chilean": "cansao; pescao"
+      },
+      {
+        "pattern": "para shortens",
+        "textbook": "para la casa",
+        "chilean": "pa' la casa"
+      },
+      {
+        "pattern": "ch can soften towards sh for some speakers",
+        "textbook": "Chile",
+        "chilean": "Shile"
+      },
+      {
+        "pattern": "Syllables run together at speed",
+        "textbook": "¿cómo estás, pues?",
+        "chilean": "¿cómo estai po?"
+      }
+    ],
+    "voseo": [
+      { "standard": "estás", "voseo": "estai" },
+      { "standard": "quieres", "voseo": "querís" },
+      { "standard": "tienes", "voseo": "tenís" },
+      { "standard": "vas", "voseo": "vai" },
+      { "standard": "eres", "voseo": "erís o soi" }
+    ],
+    "voseoNote": "In casual speech the tú forms change their endings. It is spoken, informal and never written in formal contexts. Understand it early; use it with peers once it feels natural.",
+    "ustedNote": "Many Chilean families use usted with parents-in-law as a sign of respect, others use tú. Start with usted and ask them which they prefer; the family tasks in this plan use the usted/ustedes forms.",
+    "words": [
+      { "word": "po", "meaning": "Emphasis tag, from pues", "example": "Sí po. Ya po." },
+      { "word": "¿cachai?", "meaning": "Get it? You know?", "example": "Es lejos, ¿cachai?" },
+      { "word": "al tiro", "meaning": "Right away", "example": "Voy al tiro." },
+      { "word": "ya", "meaning": "Yes, OK, right", "example": "Ya, vamos." },
+      { "word": "harto", "meaning": "A lot, very", "example": "Hace harto frío." },
+      { "word": "fome", "meaning": "Boring, lame", "example": "La película estuvo fome." },
+      { "word": "bacán", "meaning": "Great, cool", "example": "¡Qué bacán!" },
+      { "word": "la once", "meaning": "Late-afternoon tea with bread, often replacing dinner", "example": "¿Tomamos once?" },
+      { "word": "la pega", "meaning": "Work, job", "example": "Tengo harta pega." },
+      { "word": "pololo / polola", "meaning": "Boyfriend / girlfriend", "example": "Es mi polola." },
+      { "word": "guagua", "meaning": "Baby", "example": "La guagua está durmiendo." },
+      { "word": "regalonear", "meaning": "To pamper, to cuddle", "example": "Le gusta que lo regaloneen." },
+      { "word": "palta; choclo", "meaning": "Avocado; corn", "example": "Pan con palta." },
+      { "word": "luca", "meaning": "1,000 pesos", "example": "Cuesta cinco lucas." },
+      { "word": "carrete", "meaning": "Party, night out", "example": "Hubo carrete anoche." },
+      { "word": "taco", "meaning": "Traffic jam (not the food)", "example": "Había un taco terrible." },
+      { "word": "suegro / suegra; yerno", "meaning": "Father- / mother-in-law; son-in-law", "example": "Soy el yerno." },
+      { "word": "weón (hueón)", "meaning": "Mate, or idiot, depending on tone; everywhere in casual speech", "example": "Recognise it; do not aim it at your suegros." }
+    ],
+    "diminutivesNote": "Diminutives are constant and affectionate: un tecito, un ratito, al tirito."
+  },
+  "family": {
+    "jobs": [
+      "Tell them the goal and the date — say you want to hold a full conversation with them in Spanish by November 2027.",
+      "Ask for three things: speak a little slower rather than switching to English; correct one mistake per conversation, not every one; teach you one word each visit.",
+      "Settle usted or tú in the first week.",
+      "Bring one prepared question to every visit. Preparation lowers the nerves, and their answer is free listening practice."
+    ],
+    "questions": [
+      "¿Cómo era su barrio cuando eran chicos?",
+      "¿Qué se comía en su casa los domingos?",
+      "¿Cómo se conocieron ustedes?",
+      "¿Cómo celebraban el Dieciocho?",
+      "¿Qué es lo que más echan de menos de Chile?",
+      "¿Qué palabra chilena debería aprender esta semana?"
+    ],
+    "cookingSuggestions": ["Empanadas de pino", "Pastel de choclo", "Sopaipillas"],
+    "cookingNote": "Cooking together works at every level because the vocabulary is concrete and repeated."
+  },
+  "resources": [
+    { "job": "Beginner course", "name": "Language Transfer – Complete Spanish", "url": null, "phases": ["Phase 1"], "note": "Free, audio-only, builds sentences from the first lesson" },
+    { "job": "Vocabulary", "name": "Anki (or any spaced-repetition app)", "url": null, "phases": ["All phases"], "note": "Make your own cards from tutor sessions and family conversations" },
+    { "job": "Graded listening", "name": "Dreaming Spanish", "url": null, "phases": ["Phase 1", "Phase 2"], "note": "Videos sorted by level; mostly non-Chilean accents" },
+    { "job": "Tutor", "name": "A Chilean tutor on Preply or italki", "url": null, "phases": ["All phases"], "note": "Filter by country; book a recurring weekly slot" },
+    { "job": "Chilean listening, slow", "name": "Slow Chilean Spanish", "url": "https://podcasts.apple.com/us/podcast/slow-chilean-spanish/id1639733813", "phases": ["Phase 2"], "note": "Short stories aimed at upper beginners" },
+    { "job": "Chilean listening, learner", "name": "Chilean Spanish Podcast (Natalia Fontalva)", "url": "https://podcasts.apple.com/podcast/id1609135413", "phases": ["Phase 2", "Phase 3"], "note": "Running since 2022, 90-plus episodes" },
+    { "job": "Slang, audio", "name": "Speaking Chilean slang po!", "url": "https://tunein.com/podcasts/p2152596", "phases": ["Phase 3"], "note": "One slang word per episode" },
+    { "job": "Slang, reference", "name": "Speaking Chileno (book)", "url": "https://speakinglatino.com/speaking-chileno/", "phases": ["Phase 3"], "note": "A supplement for people who already speak some Spanish; includes rude words" },
+    { "job": "Native content, easy", "name": "31 Minutos (YouTube)", "url": null, "phases": ["Phase 3"], "note": "Chilean puppet news show for children that adults enjoy too" },
+    { "job": "Native content, full speed", "name": "Chilean radio, TV news and comedy podcasts", "url": null, "phases": ["Phase 3", "Phase 4"], "note": "Ask your in-laws what they watch and listen to" }
+  ],
+  "milestones": [
+    { "id": "trial-tutor", "label": "Book a trial lesson with a Chilean tutor", "weekOffset": 1 },
+    { "id": "tell-inlaws-goal", "label": "Tell your in-laws the goal and ask for their three jobs", "weekOffset": 1 },
+    { "id": "first-lesson", "label": "Do the first lesson of the beginner course", "weekOffset": 1 },
+    { "id": "block-calendar", "label": "Block the two study sessions and the tutor slot in your calendar as recurring events", "weekOffset": 1 },
+    { "id": "phase1-exit", "label": "Phase 1 exit check passed", "weekOffset": 8 },
+    { "id": "phase2-exit", "label": "Phase 2 exit check passed", "weekOffset": 20 },
+    { "id": "phase3-exit", "label": "Phase 3 exit check passed", "weekOffset": 32 },
+    { "id": "toast", "label": "Toast given in Spanish", "weekOffset": 44 },
+    { "id": "phase4-exit", "label": "Phase 4 exit check passed", "weekOffset": 52 }
+  ]
+}
