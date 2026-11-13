@@ -127,35 +127,75 @@ h1 {
   color: var(--muted);
 }
 
+.steps-heading {
+  font-size: 1.1rem;
+  margin: 4px 0 8px;
+}
+
 .slot-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 10px 0;
+  gap: 12px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border);
+  transition: opacity 0.15s;
 }
 
 .slot-row:last-child {
   border-bottom: none;
 }
 
+.slot-row.slot-done {
+  opacity: 0.6;
+}
+
+.slot-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.slot-heading {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.slot-number {
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .slot-label {
   font-weight: 600;
 }
 
-.slot-progress {
+.slot-purpose {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  margin-top: 3px;
 }
 
 .slot-resources {
   color: var(--muted);
   font-size: 0.85rem;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .slot-resources a {
   color: var(--accent);
+}
+
+.slot-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.slot-progress {
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .slot-tap {
@@ -167,6 +207,23 @@ h1 {
   color: var(--accent-fg);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.slot-toggle {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.slot-toggle.done {
+  background: var(--accent);
+  color: var(--accent-fg);
 }
 
 .secondary-btn {

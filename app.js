@@ -150,18 +150,23 @@ function renderToday(state, actualWeek) {
   }
 
   if (phase && week === actualWeek) {
+    container2.appendChild(el('h2', { class: 'steps-heading', text: 'Steps this week' }));
     const slotsCard = el('div', { class: 'card slots' });
-    CONTENT.weeklySlots.forEach(slot => {
+    CONTENT.weeklySlots.forEach((slot, idx) => {
       const count = (weekData.slots && weekData.slots[slot.id]) || 0;
       const target = slot.targetPerWeek;
-      const row = el('div', { class: 'slot-row' });
-      const info = el('div', { class: 'slot-info' }, [
-        el('div', { class: 'slot-label', text: slot.label }),
-        el('div', { class: 'slot-progress', text: `${count} / ${target}` })
-      ]);
+      const done = typeof target === 'number' && count >= target;
+      const row = el('div', { class: `slot-row${done ? ' slot-done' : ''}` });
+
+      const info = el('div', { class: 'slot-info' });
+      info.appendChild(el('div', { class: 'slot-heading' }, [
+        el('span', { class: 'slot-number', text: `${idx + 1}.` }),
+        el('span', { class: 'slot-label', text: `${slot.label}${typeof target === 'number' ? ` — ${target}× this week` : ''}` })
+      ]));
+      if (slot.purpose) info.appendChild(el('div', { class: 'slot-purpose', text: slot.purpose }));
       const resources = resourcesForSlot(slot, phase);
       if (resources.length) {
-        const resLine = el('div', { class: 'slot-resources' });
+        const resLine = el('div', { class: 'slot-resources' }, [el('strong', { text: 'Use: ' })]);
         resources.forEach((r, i) => {
           if (i > 0) resLine.appendChild(document.createTextNode(' · '));
           if (r.url) {
@@ -173,16 +178,39 @@ function renderToday(state, actualWeek) {
         info.appendChild(resLine);
       }
       row.appendChild(info);
-      const tapBtn = el('button', { class: 'slot-tap', 'aria-label': `Log ${slot.label}` }, [document.createTextNode('+')]);
-      tapBtn.addEventListener('click', () => {
-        Store.update(s => {
-          if (!s.weeks[week]) s.weeks[week] = { slots: {}, familyTaskDone: false, note: '' };
-          if (!s.weeks[week].slots) s.weeks[week].slots = {};
-          s.weeks[week].slots[slot.id] = (s.weeks[week].slots[slot.id] || 0) + 1;
+
+      const controls = el('div', { class: 'slot-controls' });
+      if (target === 1) {
+        // Single occurrence: a plain done/not-done toggle reads clearer than an open-ended counter.
+        const toggleBtn = el('button', {
+          class: `slot-toggle${done ? ' done' : ''}`,
+          'aria-label': done ? `Mark ${slot.label} not done` : `Mark ${slot.label} done`
+        }, [document.createTextNode(done ? '✓' : '')]);
+        toggleBtn.addEventListener('click', () => {
+          Store.update(s => {
+            if (!s.weeks[week]) s.weeks[week] = { slots: {}, familyTaskDone: false, note: '' };
+            if (!s.weeks[week].slots) s.weeks[week].slots = {};
+            s.weeks[week].slots[slot.id] = done ? 0 : 1;
+            if (slot.id === 'family') s.weeks[week].familyTaskDone = !done;
+          });
+          renderApp();
         });
-        renderApp();
-      });
-      row.appendChild(tapBtn);
+        controls.appendChild(toggleBtn);
+        controls.appendChild(el('div', { class: 'slot-progress', text: done ? 'Done' : 'Not yet' }));
+      } else {
+        const tapBtn = el('button', { class: 'slot-tap', 'aria-label': `Log ${slot.label}` }, [document.createTextNode('+')]);
+        tapBtn.addEventListener('click', () => {
+          Store.update(s => {
+            if (!s.weeks[week]) s.weeks[week] = { slots: {}, familyTaskDone: false, note: '' };
+            if (!s.weeks[week].slots) s.weeks[week].slots = {};
+            s.weeks[week].slots[slot.id] = (s.weeks[week].slots[slot.id] || 0) + 1;
+          });
+          renderApp();
+        });
+        controls.appendChild(tapBtn);
+        controls.appendChild(el('div', { class: 'slot-progress', text: `${count} / ${target}` }));
+      }
+      row.appendChild(controls);
       slotsCard.appendChild(row);
     });
     container2.appendChild(slotsCard);
