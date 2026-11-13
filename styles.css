@@ -148,6 +148,16 @@ h1 {
   font-size: 0.9rem;
 }
 
+.slot-resources {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.slot-resources a {
+  color: var(--accent);
+}
+
 .slot-tap {
   min-width: 48px;
   min-height: 48px;

@@ -36,6 +36,27 @@ function weekStartDate(settings, weekNumber) {
 let CONTENT = null;
 let viewingWeek = null; // week currently shown on Today screen (may differ from actual current week)
 
+// Which resources[] entries are relevant to each weekly slot. "family" has none —
+// the family task text itself is the instruction, not an external resource.
+const SLOT_RESOURCE_JOBS = {
+  vocab: ['Vocabulary'],
+  listening: ['Graded listening', 'Chilean listening, slow', 'Chilean listening, learner', 'Native content, easy', 'Native content, full speed'],
+  study: ['Beginner course'],
+  tutor: ['Tutor'],
+  family: []
+};
+
+function phaseLabel(phase) {
+  return `Phase ${phase.id.split('-')[1]}`;
+}
+
+function resourcesForSlot(slot, phase) {
+  const jobs = SLOT_RESOURCE_JOBS[slot.id] || [];
+  if (!jobs.length || !phase) return [];
+  const label = phaseLabel(phase);
+  return CONTENT.resources.filter(r => jobs.includes(r.job) && (r.phases.includes(label) || r.phases.includes('All phases')));
+}
+
 function findPhaseForWeek(week) {
   return CONTENT.phases.find(p => week >= p.weekStart && week <= p.weekEnd) || null;
 }
@@ -134,10 +155,24 @@ function renderToday(state, actualWeek) {
       const count = (weekData.slots && weekData.slots[slot.id]) || 0;
       const target = slot.targetPerWeek;
       const row = el('div', { class: 'slot-row' });
-      row.appendChild(el('div', { class: 'slot-info' }, [
+      const info = el('div', { class: 'slot-info' }, [
         el('div', { class: 'slot-label', text: slot.label }),
         el('div', { class: 'slot-progress', text: `${count} / ${target}` })
-      ]));
+      ]);
+      const resources = resourcesForSlot(slot, phase);
+      if (resources.length) {
+        const resLine = el('div', { class: 'slot-resources' });
+        resources.forEach((r, i) => {
+          if (i > 0) resLine.appendChild(document.createTextNode(' · '));
+          if (r.url) {
+            resLine.appendChild(el('a', { href: r.url, target: '_blank', rel: 'noopener', text: r.name }));
+          } else {
+            resLine.appendChild(document.createTextNode(r.name));
+          }
+        });
+        info.appendChild(resLine);
+      }
+      row.appendChild(info);
       const tapBtn = el('button', { class: 'slot-tap', 'aria-label': `Log ${slot.label}` }, [document.createTextNode('+')]);
       tapBtn.addEventListener('click', () => {
         Store.update(s => {
